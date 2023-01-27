@@ -77,7 +77,7 @@ module Keyboard
     end
 
     def self.find
-      if (device = HIDAPI.enumerate.select {|device| device.vendor_id == 0x1044 && device.product_id == 0x7a39}.first)
+      if (device = HIDAPI.enumerate.select {|device| device.vendor_id == 0x1044 && device.product_id == 0x7a3f}.first)
         usb_device = device.usb_device
         return Device.new(usb_device.bus_number, usb_device.device_address, 3)
       end
